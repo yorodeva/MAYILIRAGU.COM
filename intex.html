@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayiliragu Herbal Hair Oil</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a4a2e;
+    --green-mid: #2d6a47;
+    --green-soft: #4a8c62;
+    --green-light: #a8d5b5;
+    --green-pale: #e8f5ec;
+    --gold: #c9922a;
+    --gold-light: #f0c96b;
+    --cream: #faf6ef;
+    --cream-dark: #f0e8d8;
+    --text-dark: #1a1a1a;
+    --text-mid: #3d3d3d;
+    --text-muted: #6b6b6b;
+    --white: #ffffff;
+    --shadow: 0 4px 24px rgba(26,74,46,0.10);
+    --shadow-lg: 0 8px 40px rgba(26,74,46,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    background: rgba(250,246,239,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--green-light);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-circle {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-deep), var(--green-soft));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: var(--white); font-weight: 700;
+    flex-shrink: 0;
+  }
+  .nav-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; color: var(--green-deep); font-weight: 700;
+    line-height: 1.2;
+  }
+  .nav-brand-sub {
+    font-size: 11px; color: var(--green-soft); font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px; font-weight: 600; color: var(--text-mid);
+    text-decoration: none; letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green-deep); }
+  .nav-cart-btn {
+    position: relative;
+    background: var(--green-deep); color: var(--white);
+    border: none; border-radius: 24px;
+    padding: 9px 20px; cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cart-btn:hover { background: var(--green-mid); transform: translateY(-1px); }
+  .cart-badge {
+    position: absolute; top: -4px; right: -4px;
+    background: var(--gold); color: var(--white);
+    font-size: 11px; font-weight: 700;
+    width: 18px; height: 18px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    display: none;
+  }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; }
+  .hamburger span { width: 22px; height: 2px; background: var(--green-deep); border-radius: 2px; display: block; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 50%, var(--cream-dark) 100%);
+    display: flex; align-items: center;
+    padding: 100px 2rem 60px;
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -120px;
+    width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,213,181,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 350px; height: 350px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,146,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-pale); border: 1px solid var(--green-light);
+    border-radius: 20px; padding: 6px 16px;
+    font-size: 12px; font-weight: 600; color: var(--green-mid);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-soft); }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    color: var(--green-deep);
+    margin-bottom: 20px;
+  }
+  .hero-title span { color: var(--gold); font-style: italic; }
+  .hero-desc {
+    font-size: 16px; line-height: 1.8;
+    color: var(--text-muted); margin-bottom: 36px;
+    max-width: 440px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--green-deep); color: var(--white);
+    border: none; border-radius: 28px;
+    padding: 14px 32px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: var(--green-deep);
+    border: 2px solid var(--green-deep); border-radius: 28px;
+    padding: 12px 28px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: 'Nunito', sans-serif;
+    transition: all 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { background: var(--green-deep); color: var(--white); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 44px;
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; color: var(--green-deep);
+  }
+  .hero-stat-label { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-top: 2px; }
+
+  .hero-visual {
+    display: flex; justify-content: center; align-items: center;
+    position: relative;
+  }
+  .hero-bottle-card {
+    background: var(--white);
+    border-radius: 32px; padding: 44px 36px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    position: relative;
+    max-width: 340px;
+    width: 100%;
+    border: 1px solid rgba(168,213,181,0.4);
+  }
+  .hero-bottle-emoji { font-size: 100px; display: block; margin-bottom: 16px; line-height: 1; }
+  .hero-bottle-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--green-deep); font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .hero-bottle-tag {
+    font-size: 13px; color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .hero-bottle-price {
+    font-size: 32px; font-weight: 700; color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+  }
+  .hero-bottle-price span { font-size: 14px; color: var(--text-muted); font-weight: 400; font-family: 'Nunito', sans-serif; }
+  .hero-add-btn {
+    width: 100%; background: var(--green-deep); color: var(--white);
+    border: none; border-radius: 20px; padding: 13px;
+    font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-add-btn:hover { background: var(--green-mid); transform: translateY(-1px); }
+  .floating-leaf {
+    position: absolute; font-size: 28px;
+    animation: float 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .floating-leaf:nth-child(1) { top: -20px; right: 20px; animation-delay: 0s; }
+  .floating-leaf:nth-child(2) { bottom: 20px; left: -15px; animation-delay: 1.5s; }
+  .floating-leaf:nth-child(3) { top: 50%; right: -20px; animation-delay: 0.8s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(8deg); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 80px 2rem; }
+  .section-center { max-width: 1200px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 12px; font-weight: 700;
+    color: var(--green-soft); letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--green-deep); margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .section-title span { color: var(--gold); font-style: italic; }
+  .section-desc {
+    font-size: 15px; color: var(--text-muted);
+    max-width: 540px; line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  /* ── BENEFITS ── */
+  #benefits { background: var(--green-pale); }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .benefit-card {
+    background: var(--white); border-radius: 20px;
+    padding: 28px 24px; text-align: center;
+    border: 1px solid rgba(168,213,181,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .benefit-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+  .benefit-title { font-size: 15px; font-weight: 700; color: var(--green-deep); margin-bottom: 8px; }
+  .benefit-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--cream); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  .product-card {
+    background: var(--white); border-radius: 24px;
+    overflow: hidden; border: 1px solid rgba(168,213,181,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+  .product-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--gold); color: var(--white);
+    font-size: 11px; font-weight: 700;
+    padding: 4px 12px; border-radius: 12px;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  .product-img-area {
+    background: linear-gradient(135deg, var(--green-pale), var(--cream-dark));
+    padding: 40px 30px; text-align: center;
+    position: relative;
+  }
+  .product-emoji { font-size: 80px; display: block; }
+  .product-body { padding: 22px 22px 24px; }
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--green-deep);
+    margin-bottom: 6px;
+  }
+  .product-desc-short { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+  .product-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .product-tag {
+    background: var(--green-pale); color: var(--green-mid);
+    font-size: 11px; font-weight: 600; padding: 3px 10px;
+    border-radius: 10px; border: 1px solid var(--green-light);
+  }
+  .product-footer { display: flex; align-items: center; justify-content: space-between; }
+  .product-price {
+    font-size: 22px; font-weight: 700; color: var(--gold);
+    font-family: 'Playfair Display', serif;
+  }
+  .product-price small { font-size: 13px; color: var(--text-muted); font-family: 'Nunito', sans-serif; font-weight: 400; }
+  .add-cart-btn {
+    background: var(--green-deep); color: var(--white);
+    border: none; border-radius: 16px; padding: 9px 18px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .add-cart-btn:hover { background: var(--green-mid); transform: scale(1.03); }
+  .add-cart-btn.added { background: var(--green-soft); }
+
+  /* ── VIDEO SECTION ── */
+  #videos { background: var(--green-deep); }
+  #videos .section-tag { color: var(--gold-light); }
+  #videos .section-title { color: var(--white); }
+  #videos .section-desc { color: rgba(255,255,255,0.65); }
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .video-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  .video-card:hover { transform: translateY(-4px); }
+  .video-thumb {
+    background: linear-gradient(135deg, rgba(168,213,181,0.2), rgba(201,146,42,0.15));
+    padding: 44px; text-align: center; position: relative;
+  }
+  .video-thumb-emoji { font-size: 52px; }
+  .play-btn {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(26,74,46,0.5);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .play-btn-circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--white); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .video-card:hover .play-btn { opacity: 1; }
+  .video-body { padding: 18px 20px; }
+  .video-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .video-meta { font-size: 12px; color: rgba(255,255,255,0.5); }
+  .video-watch-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 32px;
+    color: var(--gold-light); font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid var(--gold-light);
+    padding: 10px 24px; border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .video-watch-link:hover { background: var(--gold-light); color: var(--green-deep); }
+
+  /* ── REVIEWS ── */
+  #reviews { background: var(--cream-dark); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--white); border-radius: 20px;
+    padding: 28px 24px;
+    border: 1px solid rgba(168,213,181,0.3);
+    position: relative;
+  }
+  .review-quote { font-size: 48px; color: var(--green-light); line-height: 0.8; margin-bottom: 12px; font-family: Georgia, serif; }
+  .review-text { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
+  .review-stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .review-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-soft), var(--green-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .review-name { font-size: 14px; font-weight: 700; color: var(--green-deep); }
+  .review-loc { font-size: 12px; color: var(--text-muted); }
+  .reviews-summary {
+    background: var(--green-deep); border-radius: 24px;
+    padding: 40px; color: var(--white);
+    display: flex; align-items: center; justify-content: space-around;
+    flex-wrap: wrap; gap: 24px; margin-top: 40px;
+  }
+  .rs-item { text-align: center; }
+  .rs-num { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--gold-light); }
+  .rs-label { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+
+  /* ── CART SIDEBAR ── */
+  .cart-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+    z-index: 2000; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+  .cart-sidebar {
+    position: fixed; top: 0; right: 0;
+    width: 380px; max-width: 95vw; height: 100%;
+    background: var(--cream);
+    z-index: 2001;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; flex-direction: column;
+    box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  }
+  .cart-sidebar.open { transform: translateX(0); }
+  .cart-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--green-light);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .cart-header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--green-deep);
+  }
+  .cart-close-btn {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--cream-dark); border: none; cursor: pointer;
+    font-size: 18px; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    color: var(--text-dark);
+  }
+  .cart-close-btn:hover { background: var(--green-light); }
+  .cart-items { flex: 1; overflow-y: auto; padding: 16px 24px; }
+  .cart-empty {
+    text-align: center; padding: 60px 20px;
+    color: var(--text-muted);
+  }
+  .cart-empty-icon { font-size: 52px; display: block; margin-bottom: 12px; }
+  .cart-item {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--white); border-radius: 16px;
+    padding: 14px; margin-bottom: 12px;
+    border: 1px solid rgba(168,213,181,0.3);
+  }
+  .cart-item-emoji { font-size: 38px; flex-shrink: 0; }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-size: 14px; font-weight: 700; color: var(--green-deep); }
+  .cart-item-price { font-size: 14px; color: var(--gold); font-weight: 600; margin-top: 2px; }
+  .cart-qty {
+    display: flex; align-items: center; gap: 8px; margin-top: 6px;
+  }
+  .qty-btn {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--green-pale); border: 1px solid var(--green-light);
+    font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--green-deep);
+    transition: background 0.15s;
+  }
+  .qty-btn:hover { background: var(--green-light); }
+  .qty-num { font-size: 14px; font-weight: 700; color: var(--text-dark); min-width: 20px; text-align: center; }
+  .cart-item-remove {
+    background: none; border: none; cursor: pointer;
+    font-size: 16px; color: var(--text-muted);
+    padding: 4px; transition: color 0.2s;
+  }
+  .cart-item-remove:hover { color: #c0392b; }
+  .cart-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--green-light);
+    background: var(--white);
+  }
+  .cart-total {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px;
+  }
+  .cart-total-label { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+  .cart-total-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; color: var(--green-deep);
+  }
+  .whatsapp-btn {
+    width: 100%;
+    background: #25D366; color: var(--white);
+    border: none; border-radius: 20px; padding: 15px;
+    font-size: 16px; font-weight: 700; cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .whatsapp-btn:hover { background: #1db954; transform: translateY(-1px); }
+  .whatsapp-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .wa-icon { font-size: 20px; }
+
+  /* ── CUSTOMER NAME MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+    z-index: 3000; display: none;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--white); border-radius: 28px;
+    padding: 36px 32px; width: 100%; max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--green-deep);
+    margin-bottom: 8px;
+  }
+  .modal-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  .modal-form-group { margin-bottom: 16px; }
+  .modal-label { font-size: 13px; font-weight: 600; color: var(--text-mid); display: block; margin-bottom: 6px; }
+  .modal-input {
+    width: 100%; padding: 12px 16px;
+    border: 1.5px solid var(--green-light); border-radius: 12px;
+    font-size: 15px; font-family: 'Nunito', sans-serif;
+    background: var(--cream); color: var(--text-dark);
+    outline: none; transition: border-color 0.2s;
+  }
+  .modal-input:focus { border-color: var(--green-soft); }
+  .modal-submit {
+    width: 100%; margin-top: 8px;
+    background: #25D366; color: var(--white);
+    border: none; border-radius: 16px; padding: 14px;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    transition: background 0.2s;
+  }
+  .modal-submit:hover { background: #1db954; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .about-visual {
+    background: linear-gradient(135deg, var(--green-pale), var(--cream-dark));
+    border-radius: 28px; padding: 50px; text-align: center;
+    border: 1px solid rgba(168,213,181,0.4);
+  }
+  .about-visual-emoji { font-size: 80px; display: block; margin-bottom: 20px; }
+  .about-list { list-style: none; margin-top: 24px; }
+  .about-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid var(--green-pale);
+    font-size: 15px; color: var(--text-mid); line-height: 1.6;
+  }
+  .about-list li:last-child { border-bottom: none; }
+  .about-check {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--green-pale); border: 1.5px solid var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0; margin-top: 2px;
+    color: var(--green-mid);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-deep); color: var(--white);
+    padding: 60px 2rem 30px;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+  }
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; margin-bottom: 12px; color: var(--gold-light);
+  }
+  .footer-brand-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 280px; }
+  .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+  .social-btn {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .social-btn:hover { background: rgba(255,255,255,0.2); }
+  .footer-col-title { font-size: 14px; font-weight: 700; color: var(--gold-light); margin-bottom: 16px; letter-spacing: 0.5px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    max-width: 1200px; margin: 40px auto 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
+  .footer-wa-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #25D366; color: var(--white);
+    border: none; border-radius: 20px; padding: 10px 22px;
+    font-size: 14px; font-weight: 700; cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .footer-wa-btn:hover { background: #1db954; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .hero-desc { margin: 0 auto 36px; }
+    .hero-btns { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-visual { order: -1; }
+    .about-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .reviews-summary { flex-direction: column; align-items: center; }
+    nav { padding: 0 1rem; }
+    section { padding: 60px 1rem; }
+    .hero-bottle-card { padding: 28px 20px; }
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+    background: var(--green-deep); color: var(--white);
+    padding: 12px 24px; border-radius: 24px;
+    font-size: 14px; font-weight: 600;
+    z-index: 5000; transition: transform 0.3s ease;
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    <div class="nav-logo-circle">M</div>
+    <div>
+      <div class="nav-brand-name">Mayiliragu</div>
+      <div class="nav-brand-sub">Herbal Hair Oil</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#videos">Making</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <button class="nav-cart-btn" onclick="openCart()">
+    🛒 My Cart
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+  <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" style="display:none; position:fixed; top:68px; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--green-light); z-index:999; padding:16px 2rem;">
+  <ul style="list-style:none; display:flex; flex-direction:column; gap:14px;">
+    <li><a href="#benefits" onclick="closeMobile()" style="font-size:15px; font-weight:600; color:var(--text-mid); text-decoration:none;">Benefits</a></li>
+    <li><a href="#products" onclick="closeMobile()" style="font-size:15px; font-weight:600; color:var(--text-mid); text-decoration:none;">Products</a></li>
+    <li><a href="#videos" onclick="closeMobile()" style="font-size:15px; font-weight:600; color:var(--text-mid); text-decoration:none;">Making Videos</a></li>
+    <li><a href="#reviews" onclick="closeMobile()" style="font-size:15px; font-weight:600; color:var(--text-mid); text-decoration:none;">Reviews</a></li>
+    <li><a href="#about" onclick="closeMobile()" style="font-size:15px; font-weight:600; color:var(--text-mid); text-decoration:none;">About</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><div class="hero-badge-dot"></div>100% Natural & Herbal</div>
+      <h1 class="hero-title">
+        Nature's Secret for<br>
+        <span>Beautiful Hair</span>
+      </h1>
+      <p class="hero-desc">
+        Mayiliragu Herbal Hair Oil — handcrafted with rare herbs, traditional recipes passed down generations. 
+        Nourish, strengthen, and restore your hair the natural way.
+      </p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Shop Now</a>
+        <a href="#videos" class="btn-secondary">Watch Making</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Happy Customers</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Herbal Ingredients</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Natural & Pure</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="floating-leaf">🌿</span>
+      <span class="floating-leaf">🌱</span>
+      <span class="floating-leaf">✨</span>
+      <div class="hero-bottle-card">
+        <span class="hero-bottle-emoji">🌿</span>
+        <div class="hero-bottle-name">Mayiliragu Classic Oil</div>
+        <div class="hero-bottle-tag">200ml · 15+ Herbs · Cold Pressed</div>
+        <div class="hero-bottle-price">₹350 <span>/ bottle</span></div>
+        <button class="hero-add-btn" onclick="addToCart('mayiliragu-classic', 'Mayiliragu Classic Oil', 350, '200ml', '🌿')">
+          + Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="section-center">
+    <div style="text-align:center; max-width:600px; margin: 0 auto 48px;">
+      <span class="section-tag">Why Choose Us</span>
+      <h2 class="section-title">The Power of <span>Herbs</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Our oil is a blend of traditional herbs that have been trusted for centuries to promote healthy, strong, and lustrous hair.</p>
+    </div>
+    <div class="benefits-grid fade-up">
+      <div class="benefit-card">
+        <span class="benefit-icon">💪</span>
+        <div class="benefit-title">Strengthens Roots</div>
+        <div class="benefit-desc">Deep nourishment from roots to tips, preventing hair fall and breakage effectively.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">✨</span>
+        <div class="benefit-title">Adds Shine</div>
+        <div class="benefit-desc">Natural herbs restore lustre and give your hair a healthy, vibrant glow.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🌱</span>
+        <div class="benefit-title">Promotes Growth</div>
+        <div class="benefit-desc">Stimulates hair follicles for faster, thicker, and healthier hair growth.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">❄️</span>
+        <div class="benefit-title">Cools the Scalp</div>
+        <div class="benefit-desc">Herbal ingredients soothe the scalp, reducing heat, dandruff, and itchiness.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🚫</span>
+        <div class="benefit-title">No Chemicals</div>
+        <div class="benefit-desc">Zero harmful chemicals, sulfates, or parabens. Pure and safe for all hair types.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🤲</span>
+        <div class="benefit-title">Handcrafted</div>
+        <div class="benefit-desc">Made with love using traditional methods to preserve every herb's potency.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-center">
+    <span class="section-tag">Our Products</span>
+    <h2 class="section-title">Choose Your <span>Perfect Oil</span></h2>
+    <p class="section-desc">Each variant is crafted for specific hair needs. All made with pure herbs, zero additives.</p>
+    <div class="products-grid fade-up" id="productsGrid">
+
+      <div class="product-card">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img-area">
+          <span class="product-emoji">🌿</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Mayiliragu Classic</div>
+          <div class="product-desc-short">Original formula with 15+ herbs for all-round hair care. Perfect for daily use.</div>
+          <div class="product-tags">
+            <span class="product-tag">200ml</span>
+            <span class="product-tag">All Hair Types</span>
+            <span class="product-tag">Daily Use</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹350 <small>/ bottle</small></div>
+            <button class="add-cart-btn" onclick="addToCart('classic', 'Mayiliragu Classic', 350, '200ml', '🌿', this)">
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge" style="background:var(--green-mid)">Growth+</div>
+        <div class="product-img-area">
+          <span class="product-emoji">🪴</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Hair Growth Formula</div>
+          <div class="product-desc-short">Packed with amla, brahmi & bhringraj to boost growth and reduce hair fall significantly.</div>
+          <div class="product-tags">
+            <span class="product-tag">200ml</span>
+            <span class="product-tag">Hair Fall</span>
+            <span class="product-tag">Growth</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹400 <small>/ bottle</small></div>
+            <button class="add-cart-btn" onclick="addToCart('growth', 'Hair Growth Formula', 400, '200ml', '🪴', this)">
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge" style="background:#7b4fb3">Cooling</div>
+        <div class="product-img-area">
+          <span class="product-emoji">🧊</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Cool Scalp Therapy</div>
+          <div class="product-desc-short">Neem, vetiver & mint blend to cool scalp, remove dandruff and reduce itchiness.</div>
+          <div class="product-tags">
+            <span class="product-tag">150ml</span>
+            <span class="product-tag">Anti-Dandruff</span>
+            <span class="product-tag">Cooling</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹380 <small>/ bottle</small></div>
+            <button class="add-cart-btn" onclick="addToCart('cool', 'Cool Scalp Therapy', 380, '150ml', '🧊', this)">
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge" style="background:#c07433">Value Pack</div>
+        <div class="product-img-area">
+          <span class="product-emoji">🎁</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Family Combo Pack</div>
+          <div class="product-desc-short">Get Classic + Growth Formula together at a special bundled price. Best value!</div>
+          <div class="product-tags">
+            <span class="product-tag">2 × 200ml</span>
+            <span class="product-tag">Save ₹100</span>
+            <span class="product-tag">Gift</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹600 <small>/ combo</small></div>
+            <button class="add-cart-btn" onclick="addToCart('combo', 'Family Combo Pack', 600, '2×200ml', '🎁', this)">
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="section-center">
+    <span class="section-tag">Making Videos</span>
+    <h2 class="section-title" style="color:var(--white);">Watch How We <span>Craft It</span></h2>
+    <p class="section-desc">Every drop of our oil is made by hand using traditional methods. Watch the process and trust what you're putting on your hair.</p>
+    <div class="videos-grid fade-up">
+      <div class="video-card" onclick="openYouTube()">
+        <div class="video-thumb">
+          <div class="video-thumb-emoji">🌿</div>
+          <div class="play-btn"><div class="play-btn-circle">▶</div></div>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Traditional Herb Collection Process</div>
+          <div class="video-meta">Mayiliragu · YouTube</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openYouTube()">
+        <div class="video-thumb">
+          <div class="video-thumb-emoji">🔥</div>
+          <div class="play-btn"><div class="play-btn-circle">▶</div></div>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Cold Pressing & Oil Extraction</div>
+          <div class="video-meta">Mayiliragu · YouTube</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openYouTube()">
+        <div class="video-thumb">
+          <div class="video-thumb-emoji">✨</div>
+          <div class="play-btn"><div class="play-btn-circle">▶</div></div>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Bottling & Quality Check</div>
+          <div class="video-meta">Mayiliragu · YouTube</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://www.youtube.com/playlist?list=PL4e2cImLkOKpiGNxzqOezh6z4w-8C_NrV" target="_blank" class="video-watch-link">
+        ▶ Watch Full Playlist on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-center">
+    <span class="section-tag">Customer Love</span>
+    <h2 class="section-title">What Our <span>Customers Say</span></h2>
+    <p class="section-desc">Real results, real people. Join hundreds of happy customers who love Mayiliragu.</p>
+    <div class="reviews-grid fade-up">
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-text">My hair fall reduced drastically within just 3 weeks of using Mayiliragu. I've tried so many oils but nothing worked like this. Completely natural and no greasy feeling!</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">Priya Suresh</div>
+            <div class="review-loc">Chennai, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-text">The cooling effect is amazing! My scalp used to be very itchy and hot. After using this oil for a month, it's completely calm. Also my hair looks so shiny now!</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">Kavitha Rajan</div>
+            <div class="review-loc">Coimbatore, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-text">I ordered the combo pack and both my wife and daughter love it. The smell is so natural and soothing. We will definitely order again. Best herbal oil I've found!</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-author">
+          <div class="review-avatar">👨</div>
+          <div>
+            <div class="review-name">Murugan Pillai</div>
+            <div class="review-loc">Madurai, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-text">Enna oil idhu! Mulaiyil use panna mudichu irukkanga. Dandruff completely pochi. My friends are also asking me where I got this. Superb product!</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">Deepa Krishnan</div>
+            <div class="review-loc">Tirunelveli, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-text">New hair growth visible within 6 weeks! I was almost bald at the top but now new thin hairs are growing. I'm so happy I found this product. Very fast WhatsApp delivery too!</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-author">
+          <div class="review-avatar">👨</div>
+          <div>
+            <div class="review-name">Arjun Chandran</div>
+            <div class="review-loc">Salem, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-text">Excellent quality oil! The herbs are clearly fresh and properly processed. My hair has become so thick and strong. Ordering for the third time already — best investment for hair!</div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">Meena Balaji</div>
+            <div class="review-loc">Trichy, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="reviews-summary fade-up">
+      <div class="rs-item">
+        <div class="rs-num">4.9</div>
+        <div class="rs-label">Average Rating</div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-num">500+</div>
+        <div class="rs-label">Happy Customers</div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-num">98%</div>
+        <div class="rs-label">Repeat Orders</div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-num">0</div>
+        <div class="rs-label">Chemicals Used</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-center">
+    <div class="about-inner">
+      <div class="about-visual fade-up">
+        <span class="about-visual-emoji">🌿</span>
+        <div style="font-family:'Playfair Display',serif; font-size:20px; color:var(--green-deep); font-weight:700; margin-bottom:8px;">Handmade with Heart</div>
+        <div style="font-size:13px; color:var(--text-muted); line-height:1.7;">Fresh herbs. Traditional methods. Pure love for your hair.</div>
+        <div style="display:flex; justify-content:center; gap:16px; margin-top:24px; flex-wrap:wrap;">
+          <span style="background:var(--white); border:1px solid var(--green-light); border-radius:12px; padding:8px 16px; font-size:12px; font-weight:600; color:var(--green-mid);">🌱 Amla</span>
+          <span style="background:var(--white); border:1px solid var(--green-light); border-radius:12px; padding:8px 16px; font-size:12px; font-weight:600; color:var(--green-mid);">🌿 Brahmi</span>
+          <span style="background:var(--white); border:1px solid var(--green-light); border-radius:12px; padding:8px 16px; font-size:12px; font-weight:600; color:var(--green-mid);">🍃 Bhringraj</span>
+          <span style="background:var(--white); border:1px solid var(--green-light); border-radius:12px; padding:8px 16px; font-size:12px; font-weight:600; color:var(--green-mid);">🌸 Neem</span>
+          <span style="background:var(--white); border:1px solid var(--green-light); border-radius:12px; padding:8px 16px; font-size:12px; font-weight:600; color:var(--green-mid);">🌾 Vetiver</span>
+          <span style="background:var(--white); border:1px solid var(--green-light); border-radius:12px; padding:8px 16px; font-size:12px; font-weight:600; color:var(--green-mid);">+ 10 More</span>
+        </div>
+      </div>
+      <div class="fade-up">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">Made with <span>Tradition</span></h2>
+        <p style="font-size:15px; color:var(--text-muted); line-height:1.8; margin-bottom:24px;">
+          Mayiliragu Herbal Hair Oil is a small-batch, handcrafted product made from a traditional family recipe. 
+          We source only the freshest herbs and use cold-pressing techniques to ensure every nutrient is preserved.
+        </p>
+        <ul class="about-list">
+          <li><div class="about-check">✓</div><span><strong>No shortcuts</strong> — every batch is carefully prepared by hand in small quantities for maximum quality.</span></li>
+          <li><div class="about-check">✓</div><span><strong>Fresh ingredients</strong> — herbs sourced directly from trusted local farms, processed immediately after harvest.</span></li>
+          <li><div class="about-check">✓</div><span><strong>Traditional recipe</strong> — a family formula perfected over generations, now shared with the world.</span></li>
+          <li><div class="about-check">✓</div><span><strong>Safe for all ages</strong> — no chemicals, no toxins. Safe for children and adults alike.</span></li>
+          <li><div class="about-check">✓</div><span><strong>Direct from maker</strong> — order directly via WhatsApp for personalised service and fast delivery.</span></li>
+        </ul>
+        <div style="margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#products" class="btn-primary">Shop Now</a>
+          <a href="https://www.youtube.com/playlist?list=PL4e2cImLkOKpiGNxzqOezh6z4w-8C_NrV" target="_blank" class="btn-secondary">Watch Videos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Mayiliragu Herbal Hair Oil</div>
+      <div class="footer-brand-desc">100% natural herbal hair oil made with traditional recipes. Pure, handcrafted, and trusted by hundreds of happy customers across Tamil Nadu.</div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/playlist?list=PL4e2cImLkOKpiGNxzqOezh6z4w-8C_NrV" target="_blank" class="social-btn" title="YouTube">▶</a>
+        <a href="#" class="social-btn" title="Instagram">📸</a>
+        <a href="#" class="social-btn" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#videos">Making Videos</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Order & Contact</div>
+      <ul class="footer-links">
+        <li><a href="#products">Order via WhatsApp</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 Mayiliragu Herbal Hair Oil. All rights reserved.</div>
+    <a href="#" class="footer-wa-btn" onclick="event.preventDefault(); openCart();">
+      🛒 Order on WhatsApp
+    </a>
+  </div>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div class="cart-header-title">🛒 My Cart</div>
+    <button class="cart-close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <span class="cart-empty-icon">🛒</span>
+      <div style="font-size:15px; font-weight:600; color:var(--text-mid); margin-bottom:6px;">Your cart is empty</div>
+      <div style="font-size:13px;">Add some products to get started!</div>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span class="cart-total-label">Total Amount</span>
+      <span class="cart-total-amount" id="cartTotal">₹0</span>
+    </div>
+    <button class="whatsapp-btn" onclick="checkout()">
+      <span class="wa-icon">💬</span>
+      Order via WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- CUSTOMER MODAL -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal-box">
+    <div class="modal-title">Complete Your Order 🌿</div>
+    <div class="modal-sub">Please enter your details to place your order via WhatsApp.</div>
+    <div class="modal-form-group">
+      <label class="modal-label">Your Name *</label>
+      <input type="text" class="modal-input" id="customerName" placeholder="e.g. Priya Suresh" />
+    </div>
+    <div class="modal-form-group">
+      <label class="modal-label">Phone Number *</label>
+      <input type="tel" class="modal-input" id="customerPhone" placeholder="e.g. 9876543210" />
+    </div>
+    <div class="modal-form-group">
+      <label class="modal-label">Delivery Address</label>
+      <input type="text" class="modal-input" id="customerAddress" placeholder="City / Town, District" />
+    </div>
+    <button class="modal-submit" onclick="sendToWhatsApp()">
+      <span>💬</span> Send Order to WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Added to cart!</div>
+
+<script>
+// === CART STATE ===
+let cart = {};
+
+const WHATSAPP_NUMBER = '919999999999'; // ← REPLACE WITH YOUR WHATSAPP NUMBER (country code + number, no + sign)
+
+function addToCart(id, name, price, size, emoji, btn) {
+  if (cart[id]) {
+    cart[id].qty++;
+  } else {
+    cart[id] = { id, name, price, size, emoji, qty: 1 };
+  }
+  updateCartUI();
+  showToast('🌿 ' + name + ' added to cart!');
+  if (btn) {
+    btn.textContent = '✓ Added';
+    btn.classList.add('added');
+    setTimeout(() => { btn.textContent = '+ Add'; btn.classList.remove('added'); }, 1800);
+  }
+}
+
+function removeFromCart(id) {
+  delete cart[id];
+  updateCartUI();
+}
+
+function changeQty(id, delta) {
+  if (!cart[id]) return;
+  cart[id].qty += delta;
+  if (cart[id].qty <= 0) removeFromCart(id);
+  else updateCartUI();
+}
+
+function updateCartUI() {
+  const items = Object.values(cart);
+  const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+  const count = items.reduce((s, i) => s + i.qty, 0);
+
+  // Badge
+  const badge = document.getElementById('cartBadge');
+  if (count > 0) { badge.style.display = 'flex'; badge.textContent = count; }
+  else badge.style.display = 'none';
+
+  // Cart items
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+
+  if (items.length === 0) {
+    container.innerHTML = `<div class="cart-empty"><span class="cart-empty-icon">🛒</span><div style="font-size:15px;font-weight:600;color:var(--text-mid);margin-bottom:6px;">Your cart is empty</div><div style="font-size:13px;">Add some products to get started!</div></div>`;
+    footer.style.display = 'none';
+    return;
+  }
+
+  footer.style.display = 'block';
+  document.getElementById('cartTotal').textContent = '₹' + total.toLocaleString('en-IN');
+
+  container.innerHTML = items.map(item => `
+    <div class="cart-item">
+      <span class="cart-item-emoji">${item.emoji}</span>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">₹${item.price} · ${item.size}</div>
+        <div class="cart-qty">
+          <button class="qty-btn" onclick="changeQty('${item.id}', -1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">🗑</button>
+    </div>
+  `).join('');
+}
+
+function openCart() {
+  document.getElementById('cartSidebar').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function checkout() {
+  const items = Object.values(cart);
+  if (items.length === 0) return;
+  closeCart();
+  document.getElementById('checkoutModal').classList.add('open');
+  document.getElementById('customerName').focus();
+}
+
+function sendToWhatsApp() {
+  const name = document.getElementById('customerName').value.trim();
+  const phone = document.getElementById('customerPhone').value.trim();
+  const address = document.getElementById('customerAddress').value.trim();
+
+  if (!name || !phone) {
+    alert('Please enter your name and phone number!');
+    return;
+  }
+
+  const items = Object.values(cart);
+  const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+
+  let msg = `🌿 *New Order - Mayiliragu Herbal Hair Oil* 🌿\n\n`;
+  msg += `👤 *Customer:* ${name}\n`;
+  msg += `📱 *Phone:* ${phone}\n`;
+  if (address) msg += `📍 *Address:* ${address}\n`;
+  msg += `\n*Order Details:*\n`;
+  msg += `─────────────────\n`;
+  items.forEach(item => {
+    msg += `${item.emoji} ${item.name} (${item.size})\n`;
+    msg += `   Qty: ${item.qty} × ₹${item.price} = ₹${item.qty * item.price}\n`;
+  });
+  msg += `─────────────────\n`;
+  msg += `💰 *Total: ₹${total.toLocaleString('en-IN')}*\n\n`;
+  msg += `Please confirm availability and share payment details. Thank you! 🙏`;
+
+  const encoded = encodeURIComponent(msg);
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+  
+  window.open(url, '_blank');
+  
+  // Reset
+  cart = {};
+  updateCartUI();
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.getElementById('customerName').value = '';
+  document.getElementById('customerPhone').value = '';
+  document.getElementById('customerAddress').value = '';
+  showToast('✅ Opening WhatsApp...');
+}
+
+// Close modal on outside click
+document.getElementById('checkoutModal').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('open');
+});
+
+function openYouTube() {
+  window.open('https://www.youtube.com/playlist?list=PL4e2cImLkOKpiGNxzqOezh6z4w-8C_NrV', '_blank');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.style.display = m.style.display === 'none' ? 'block' : 'none';
+}
+
+function closeMobile() {
+  document.getElementById('mobileMenu').style.display = 'none';
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
